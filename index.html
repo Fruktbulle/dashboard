@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Realtidsdisplay - Högbrinksvägen</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://www.elprisetjustnu.se/api/v1/iframeResizer.min.js"></script>
+</head>
+
+<body>
+  <!-- Övre informationsfält -->
+  <div class="info-bar">
+    <div id="current-time">🕒 Nuvarande tid: --:--</div>
+    <div id="weather">🌤 Väderdata hämtas...</div>
+  </div>
+
+  <!-- Huvudinnehåll -->
+  <div class="main-content">
+    <!-- Vänster sektion med busstabell och kalender -->
+    <div class="left-section">
+      <!-- Realtidsavgångar -->
+      <div class="container departures-container">
+        <h1>Realtidsinformation</h1>
+        <div id="departures">
+          <!-- Buss- och tågtider läggs till här -->
+        </div>
+      </div>
+
+      <!-- Kalender -->
+      <div class="calendar-container">
+        <h2>Kalender för januari 2025</h2>
+        <div id="calendar" class="calendar"></div>
+      </div>
+    </div>
+
+    <!-- Höger sektion med elpris-widget -->
+    <div class="right-section">
+      <div class="electricity-embed">
+        <iframe
+          title="Elpriser"
+          src="https://www.elprisetjustnu.se/i/stockholm?mode=embed"
+          class="electricity-frame"
+          onload="iFrameResize({heightCalculationMethod: 'taggedElement', checkOrigin: false}, this);">
+        </iframe>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
